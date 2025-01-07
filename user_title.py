@@ -9,7 +9,7 @@ df = pd.read_json('all_active_titles.json')
 
 # Filter from a root node
 # Use 2630 for Tim
-select_ids = select_ids_for_tree("2630", 'all_active_titles.json')
+select_ids = select_ids_for_tree("3093", 'all_active_titles.json')
 print(select_ids, "select ids")
 df = df[df["id"].isin(select_ids)]
 
