@@ -7,7 +7,7 @@ def select_ids_for_tree(manager_id, json_file):
     with open(json_file) as f:
         titles = json.load(f)
     recursive_id_lookup(manager_id, titles, title_id_tree_list)
-    return title_id_tree_list
+    return [int(x) for x in title_id_tree_list]
 
 
 def recursive_id_lookup(manager_id, titles, title_id_tree_list):
@@ -28,3 +28,6 @@ def managed_titles(title_list, manager_id):
     return [x["id"]
             for x in title_list
             if x["managed_by_title_id"] == manager_id]
+
+
+# print(select_ids_for_tree('60', 'all_active_titles.json'))
